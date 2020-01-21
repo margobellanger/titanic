@@ -45,7 +45,19 @@ def get_processed_data():
     ax = sns.distplot(men[men['Survived'] == 0].Age.dropna(), bins=40, label=not_survived, ax=axes[1], kde=False)
     ax.legend()
     _ = ax.set_title('Male')
-   # plt.show()
+    # plt.show()
+
+    data = [train_df, test_df]
+    for dataset in data:
+        dataset['relatives'] = dataset['SibSp'] + dataset['Parch']
+        dataset.loc[dataset['relatives'] > 0, 'not_alone'] = 0
+        dataset.loc[dataset['relatives'] == 0, 'not_alone'] = 1
+        dataset['not_alone'] = dataset['not_alone'].astype(int)
+    train_df['not_alone'].value_counts()
+
+    train_df = train_df.drop(['PassengerId'], axis=1)
+
+    # Missing data
 
 
 get_processed_data()
