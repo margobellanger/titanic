@@ -6,8 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 
 
-train_data = pd.read_csv("data/train.csv")
-test_data = pd.read_csv("data/test.csv")
+
 
 test_data_copy = test_data.copy()
 
