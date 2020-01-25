@@ -1,8 +1,5 @@
 from sklearn import linear_model
-
-
 from preprocessor import get_processed_data
-
 
 X_train, Y_train, X_test = get_processed_data()
 

@@ -1,5 +1,4 @@
 from sklearn.ensemble import RandomForestClassifier
-
 from preprocessor import get_processed_data
 
 X_train, Y_train, X_test = get_processed_data()

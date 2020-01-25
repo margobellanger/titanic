@@ -1,12 +1,8 @@
 import numpy as np
-
-# data processing
 import pandas as pd
 
-# data visualization
 import seaborn as sns
 from matplotlib import pyplot as plt
-from matplotlib import style
 
 pd.options.display.max_rows = 999
 pd.options.display.max_columns = 999
@@ -88,7 +84,7 @@ def get_processed_data():
         dataset["Age"] = train_df["Age"].astype(int)
     train_df["Age"].isnull().sum()
 
-    common_value = 'S' # most common embarked
+    common_value = 'S'  # most common embarked
     data = [train_df, test_df]
 
     for dataset in data:
@@ -171,7 +167,4 @@ def get_processed_data():
     Y_train = train_df["Survived"]
     X_test = test_df.drop("PassengerId", axis=1).copy()
 
-
     return X_train, Y_train, X_test
-
-
